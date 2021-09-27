@@ -9,7 +9,7 @@ body {
     top: 13.5%;
     position: fixed;
     z-index: 1;
-    /* visibility: hidden; */
+    visibility: hidden;
     width: 100%;
 }
 
