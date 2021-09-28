@@ -943,6 +943,13 @@ var furniture = document.getElementById("furniture");
 var queryBtn = document.getElementById("queryBtn");
 var queryLinks = document.getElementById("queryLinks");
 var closeNav = document.getElementById("closeNav");
+var surprise = document.getElementById("surprise");
+var exitSale = document.getElementById("exitSale");
+
+setTimeout(() => {
+    surprise.style.visibility= "visible";
+    exitSale.onclick=()=>{surprise.style.visibility= "hidden";}
+}, 2000);
 
 queryBtn.addEventListener("mouseenter",()=>{queryLinks.style.visibility = "visible"})
 closeNav.addEventListener("click",()=>{queryLinks.style.visibility = "hidden"})

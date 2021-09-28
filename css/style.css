@@ -5,6 +5,47 @@ body {
     width: 100%;
 }
 
+#surprise{
+    position: fixed;
+    height: 25vh;
+    width: 80%;
+    margin-left: 10%;
+    bottom: 0%;
+    border-left: 1.2px solid rgba(0, 0, 0, 0.836);
+    border-top: 1.2px solid rgba(0, 0, 0, 0.836);
+    border-right: 1.2px solid rgba(0, 0, 0, 0.836);
+    z-index: 1;
+    visibility: hidden;
+}
+
+#surprisePic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: brightness(115%);
+    z-index: -1;
+}
+
+#contain{
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(rgba(255, 255, 255, 0.967),rgba(255, 255, 255, 0.000));
+    position: relative;
+    align-items: center;
+    width: 30%;
+    height: 98%;
+    left: 70%;
+    z-index: 1;
+    margin-bottom: 0%;
+}
+
+.content{
+    position: absolute;
+    width: 50%;
+    top: 0%;
+    text-align: center;
+}
+
 #queryNav{
     top: 13.5%;
     position: fixed;
