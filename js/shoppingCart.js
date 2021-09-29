@@ -90,14 +90,13 @@ summary2.innerText = `${sum + 150}$`;
 const submit = document.getElementById("submit");
 const orderSent = document.getElementById("orderSent");
 
-submit.onclick=()=>{
-    orderSent.style.visibility= "visible";
-    orderSent.style.transform= "scale(1)";
-}
-
-orderSent.onclick=()=>{
-    orderSent.style.visibility= "hidden";
-    orderSent.style.transform= "scale(.1)";
+submit.onclick = () => {
+    orderSent.style.visibility = "visible";
+    orderSent.style.transform = "scale(1)";
+    setTimeout(() => {
+        orderSent.style.visibility = "hidden";
+        orderSent.style.transform = "scale(.1)";
+    }, 1500);
 }
 
 function deleteItem(id) {
