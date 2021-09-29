@@ -106,7 +106,7 @@ function deleteItem(id) {
             document.getElementById(id).innerHTML = "";
             let sum2 = itemSum()
             summary.innerText = `${sum2}$`;
-            summary2.innerText = `${sum2 + 150}$` ;
+            summary2.innerText = `${sum2 + 150}$`;
             totalItems.innerText = `${customerCart.length}`;
             console.log(customerCart);
         }
@@ -125,9 +125,9 @@ var queryBtn = document.getElementById("queryBtn");
 var queryLinks = document.getElementById("queryLinks");
 var closeNav = document.getElementById("closeNav");
 
-queryBtn.addEventListener("mouseenter",()=>{queryLinks.style.visibility = "visible"})
+queryBtn.addEventListener("mouseenter", () => { queryLinks.style.visibility = "visible" })
 
-closeNav.addEventListener("click",()=>{queryLinks.style.visibility = "hidden"})
+closeNav.addEventListener("click", () => { queryLinks.style.visibility = "hidden" })
 
 for (let i = 0; i < row.length; i++) {
     removeOrders.onclick = () => {
@@ -154,5 +154,17 @@ deliver.onclick = () => {
 exitForm.onclick = () => {
     formContainer.style.visibility = "hidden"
 }
+
+function removeFromPopCart(id) {
+    for (let i = 0; i < customerCart.length; i++) {
+        if (customerCart[i].id == id) {
+            customerCart.splice(i, 1);
+            document.getElementById(id).innerHTML = "";
+            cartPopItems[i].style.borderTop = "0px";
+            cartCounter.innerText = customerCart.length;
+        }
+    }
+}
+
 
 

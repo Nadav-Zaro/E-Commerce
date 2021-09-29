@@ -69,7 +69,7 @@ function popCart() {
     for (let i = 0; i < customerCart.length; i++) {
         var randomPrice = Math.floor((Math.random() * 4000) + 6000);
         cartPopFurs.innerHTML += `
-    <div class="cartPopItems">
+    <div class="cartPopItems" id="${customerCart[i].id}">
     <div class="cartImgHolder">
     <img class="cartImg" src="${customerCart[i].pictures[0]}">
     </div>
@@ -78,7 +78,7 @@ function popCart() {
     <p>category: ${customerCart[i].category}</p>
     <p>price: ${randomPrice}$</p>
     </div>
-    <div class="cartRemove"><i class="fa fa-minus"></i></div>
+    <div class="cartRemove"><i class="fa fa-minus" onclick= "removeFromPopCart(${customerCart[i].id})"></i></div>
     </div>`
     }
 }
@@ -108,17 +108,6 @@ exitCart.onclick = () => {
         card[i].style.zIndex = "0";
     }
 };
-
-function removeFromPopCart() {
-    for (let i = 0; i < cartPopItems.length; i++) {
-        cartRemove[i].onclick = () => {
-            cartPopItems[i].innerHTML = "";
-            cartPopItems[i].style.borderTop = "0px";
-            cartCounter.innerText--;
-        }
-    }
-}
-removeFromPopCart()
 
 for (let i = 0; i < kitList.length; i++) {
     btn2[i].onclick = () => {
