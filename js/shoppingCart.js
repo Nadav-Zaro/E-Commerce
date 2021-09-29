@@ -232,6 +232,10 @@ function topSalesToCart(id) {
             customerCart.push(topSales1[i]);
             console.log(customerCart);
             table.innerHTML = "";
+            let sum2 = itemSum()
+            summary.innerText = `${sum2}$`;
+            summary2.innerText = `${sum2 + 150}$`;
+            totalItems.innerText = `${customerCart.length}`;
             shopList();
         }
     }
