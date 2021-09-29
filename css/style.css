@@ -457,7 +457,7 @@ span {
     #stickyCart{
         width: 10%;
     }
-    #surprise{visibility: hidden;}
+    #surprise{display: none;}
 }
 
 @media screen and (max-width: 425px) {
@@ -501,5 +501,5 @@ span {
         visibility: hidden;
         transition: 0s;
     }
-    #surprise{visibility: hidden;}
+    #surprise{display: none;}
 }
