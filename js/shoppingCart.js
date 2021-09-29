@@ -38,9 +38,10 @@ var sum = 0;
 var table = document.getElementById("table")
 var total = document.getElementById("total")
 
-for (let i = 0; i < customerCart.length; i++) {
-    sum += customerCart[i].price;
-    table.innerHTML += `                
+function shopList() {
+    for (let i = 0; i < customerCart.length; i++) {
+        sum += customerCart[i].price;
+        table.innerHTML += `                
     <tr class="row" id="${customerCart[i].id}">
     <td class="item">
         <div class="furInfo">
@@ -71,8 +72,9 @@ for (let i = 0; i < customerCart.length; i++) {
         </div>
     </td>
     </tr>`
+    }
 }
-
+shopList()
 
 const removeItem = document.getElementsByClassName("removeItem")
 const deliver = document.getElementById("deliver")
@@ -166,5 +168,73 @@ function removeFromPopCart(id) {
     }
 }
 
+var topSales1 = [
+    {
+        id: 3,
+        furName: "Bellevue",
+        price: 2600,
+        description: "most compfortable",
+        category: "living-room",
+        pictures: [
+            "../images/id31.jpg",
+            "../images/id3.jpg"
+        ]
+    },
+    {
+        id: 22,
+        furName: "Maru",
+        price: 15000,
+        description: "most astonishing",
+        category: "kitchens",
+        pictures: [
+            "../images/id196.jpg",
+            "../images/id197.jpg"
+        ]
+    },
+    {
+        id: 38,
+        furName: "Grizzly",
+        price: 4500,
+        description: "most spectacular",
+        category: "dinette",
+        pictures: [
+            "../images/id372.jpg",
+            "../images/id373.jpg"
+        ]
+    },
+    {
+        id: 57,
+        furName: "Riri",
+        price: 70000,
+        description: "most serene",
+        category: "carpets",
+        pictures: [
+            "../images/id554.jpg",
+            "../images/id555.jpg"
+        ]
+    },
+]
+
+const topSalesCon = document.getElementById("topSalesCon");
+var salesNum = 1;
+
+for (let i = 0; i < topSales1.length; i++) {
+    topSalesCon.innerHTML += `  <div class="topFur" id="${topSales1[i].id}"><p style="width: 3%;">${salesNum++}</p>
+    <img src="${topSales1[i].pictures[0]}" style="width: 35%;height: 100%;">
+    <p style="width: 25%;height: 100%;">"${topSales1[i].furName}"</p>
+    <p style="width: 20%;height: 100%;">${topSales1[i].price}$</p>
+    <buttom type="button" onclick= "topSalesToCart(${topSales1[i].id})" style="width: 10%;height: 100%;cursor:pointer;"><i class="fa fa-plus" style="text-align:center;"></i></button></div>`
+}
+
+function topSalesToCart(id) {
+    for (let i = 0; i < topSales1.length; i++) {
+        if (topSales1[i].id == id) {
+            customerCart.push(topSales1[i]);
+            console.log(customerCart);
+            table.innerHTML = "";
+            shopList();
+        }
+    }
+}
 
 
